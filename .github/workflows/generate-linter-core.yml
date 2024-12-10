@@ -1,4 +1,4 @@
-name: Linting Generated Blueprints Core
+name: Linting Generated ForgeXs Core
 
 on:
   pull_request: {}

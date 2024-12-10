@@ -8,7 +8,7 @@ forgex create
 
 This command will interactively guide you through the project setup process, allowing you to choose the project name, framework, and database driver.
 
-![BlueprintInteractive](../public/blueprint_1.png)
+![ForgeXInteractive](../public/ForgeX_1.png)
 
 ## Using Flags for Non-Interactive Setup
 
@@ -29,7 +29,7 @@ Customize the flags according to your project requirements.
 
 ## Advanced Flag
 
-By including the `--advanced` flag, users can choose one or all of the advanced features, HTMX, GitHub Actions for CI/CD, Websocket, Docker and TailwindCSS support, during the project creation process. The flag enhances the simplicity of Blueprint while offering flexibility for users who require additional functionality.
+By including the `--advanced` flag, users can choose one or all of the advanced features, HTMX, GitHub Actions for CI/CD, Websocket, Docker and TailwindCSS support, during the project creation process. The flag enhances the simplicity of ForgeX while offering flexibility for users who require additional functionality.
 
 ```bash
 forgex create --advanced
@@ -41,7 +41,7 @@ forgex create --name my-project --framework chi --driver mysql --git commit --ad
 ```
 This approach opens interactive mode only for advanced features, which allow you to choose the one or combination of available features.
 
-![AdvancedFlag](../public/blueprint_advanced.png)
+![AdvancedFlag](../public/ForgeX_advanced.png)
 
 ## Non-Interactive Setup
 

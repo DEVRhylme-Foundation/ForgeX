@@ -1,4 +1,4 @@
-name: Linting Generated Blueprints Advanced
+name: Linting Generated ForgeXs Advanced
 
 on:
   pull_request: {}

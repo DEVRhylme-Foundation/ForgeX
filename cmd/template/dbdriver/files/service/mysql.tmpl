@@ -29,11 +29,11 @@ type service struct {
 }
 
 var (
-	dbname     = os.Getenv("BLUEPRINT_DB_DATABASE")
-	password   = os.Getenv("BLUEPRINT_DB_PASSWORD")
-	username   = os.Getenv("BLUEPRINT_DB_USERNAME")
-	port       = os.Getenv("BLUEPRINT_DB_PORT")
-	host       = os.Getenv("BLUEPRINT_DB_HOST")
+	dbname     = os.Getenv("ForgeX_DB_DATABASE")
+	password   = os.Getenv("ForgeX_DB_PASSWORD")
+	username   = os.Getenv("ForgeX_DB_USERNAME")
+	port       = os.Getenv("ForgeX_DB_PORT")
+	host       = os.Getenv("ForgeX_DB_HOST")
 	dbInstance *service
 )
 

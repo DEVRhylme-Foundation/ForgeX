@@ -2,11 +2,11 @@
 
 <div style="text-align: center;">
   <h1>
-    Introducing the Ultimate Golang Blueprint Library
+    Introducing the Ultimate Golang ForgeX Library
   </h1>
 </div>
 
-Go Blueprint is a CLI tool that allows users to spin up a Go project with the corresponding structure seamlessly. It also
+Go ForgeX is a CLI tool that allows users to spin up a Go project with the corresponding structure seamlessly. It also
 gives the option to integrate with one of the more popular Go frameworks (and the list is growing with new features)!
 
 ### Why Would I use this?
@@ -24,7 +24,7 @@ gives the option to integrate with one of the more popular Go frameworks (and th
 - [Frameworks Supported](#frameworks-supported)
 - [Database Support](#database-support)
 - [Advanced Features](#advanced-features)
-- [Blueprint UI](#blueprint-ui)
+- [ForgeX UI](#ForgeX-ui)
 - [Usage Example](#usage-example)
 - [GitHub Stats](#github-stats)
 - [License](#license)
@@ -83,7 +83,7 @@ See `forgex create -h` for all the options and shorthands.
   Database Support
 </h2>
 
-Go Blueprint now offers enhanced database support, allowing you to choose your preferred database driver during project setup. Use the `--driver` or `-d` flag to specify the database driver you want to integrate into your project.
+Go ForgeX now offers enhanced database support, allowing you to choose your preferred database driver during project setup. Use the `--driver` or `-d` flag to specify the database driver you want to integrate into your project.
 
 ### Supported Database Drivers
 
@@ -104,7 +104,7 @@ Choose from a variety of supported database drivers:
   Advanced Features
 </h2>
 
-Blueprint is focused on being as minimalistic as possible. That being said, we wanted to offer the ability to add other features people may want without bloating the overall experience.
+ForgeX is focused on being as minimalistic as possible. That being said, we wanted to offer the ability to add other features people may want without bloating the overall experience.
 
 You can now use the `--advanced` flag when running the `create` command to get access to the following features. This is a multi-option prompt; one or more features can be used at the same time:
 
@@ -116,16 +116,16 @@ You can now use the `--advanced` flag when running the `create` command to get a
 
 Note: selecting tailwind option automatically selects htmx.
 
-<a id="blueprint-ui"></a>
+<a id="ForgeX-ui"></a>
 
 <h2>
   <picture>
     <img src="./public/ui.gif?raw=true" width="100px" style="margin-right: 1px;">
   </picture>
-  Blueprint UI
+  ForgeX UI
 </h2>
 
-Blueprint UI is a web application that allows you to create commands for the CLI and preview the structure of your project. You will be able to see directories and files that will be created upon command execution. Check it out at [forgex.dev](https://forgex.dev)
+ForgeX UI is a web application that allows you to create commands for the CLI and preview the structure of your project. You will be able to see directories and files that will be created upon command execution. Check it out at [forgex.dev](https://forgex.dev)
 
 <a id="usage-example"></a>
 
@@ -143,7 +143,7 @@ forgex create --name my-project --framework gin --driver postgres --git commit
 ```
 
 <p align="center">
-  <img src="./public/blueprint_1.png" alt="Starter Image" width="800"/>
+  <img src="./public/ForgeX_1.png" alt="Starter Image" width="800"/>
 </p>
 
 Advanced features are accessible with the --advanced flag
@@ -185,10 +185,10 @@ forgex create --name my-project --framework chi --driver mysql --advanced --feat
 ```
 
 <p align="center">
-  <img src="./public/blueprint_advanced.png" alt="Advanced Options" width="800"/>
+  <img src="./public/ForgeX_advanced.png" alt="Advanced Options" width="800"/>
 </p>
 
- **Visit [documentation](https://docs.forgex.dev) to learn more about blueprint and its features.**
+ **Visit [documentation](https://docs.forgex.dev) to learn more about ForgeX and its features.**
 
 <a id="github-stats"></a>
 
