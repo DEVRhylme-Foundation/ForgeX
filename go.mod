@@ -1,4 +1,4 @@
-module github.com/melkeydev/go-blueprint
+module github.com/DEVRhylme-Foundation/forgex
 
 go 1.22.4
 

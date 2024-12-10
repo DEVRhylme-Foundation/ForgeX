@@ -2,30 +2,30 @@
 hide:
   - toc
 ---
-Go-Blueprint provides a convenient CLI tool to effortlessly set up your Go projects. Follow the steps below to install the tool on your system.
+forgex provides a convenient CLI tool to effortlessly set up your Go projects. Follow the steps below to install the tool on your system.
 
 ## Binary Installation
 
-To install the Go-Blueprint CLI tool as a binary, Run the following command:
+To install the forgex CLI tool as a binary, Run the following command:
 
 ```sh
-go install github.com/melkeydev/go-blueprint@latest
+go install github.com/DEVRhylme-Foundation/forgex@latest
 ```
 
-This command installs the Go-Blueprint binary, automatically binding it to your `$GOPATH`.
+This command installs the forgex binary, automatically binding it to your `$GOPATH`.
 
 
 ## Building and Installing from Source
 
-If you prefer to build and install Go-Blueprint directly from the source code, you can follow these steps:
+If you prefer to build and install forgex directly from the source code, you can follow these steps:
 
-Clone the Go-Blueprint repository from GitHub:
+Clone the forgex repository from GitHub:
 
 ```sh
-git clone https://github.com/melkeydev/go-blueprint
+git clone https://github.com/DEVRhylme-Foundation/forgex
 ```
    
-Build the Go-Blueprint binary:
+Build the forgex binary:
 
 ```sh
 go build
@@ -39,9 +39,9 @@ go install
 Verify the installation by running:
 
 ```sh
-go-blueprint version
+forgex version
 ```
 
-This should display the version information of the installed Go-Blueprint.
+This should display the version information of the installed forgex.
 
-Now you have successfully built and installed Go-Blueprint from the source code.
+Now you have successfully built and installed forgex from the source code.

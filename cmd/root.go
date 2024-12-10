@@ -1,5 +1,5 @@
 /*
-Copyright © 2023 Melkey melkeydev@gmail.com
+Copyright © 2023 Melkey DEVRhylme-Foundation@gmail.com
 */
 package cmd
 
@@ -11,7 +11,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "go-blueprint",
+	Use:   "forgex",
 	Short: "A program to spin up a quick Go project using a popular framework",
 	Long: `Go Blueprint is a CLI tool that allows users to spin up a Go project with the corresponding structure seamlessly. 
 It also gives the option to integrate with one of the more popular Go frameworks!`,
@@ -31,7 +31,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.go-blueprint.yaml)")
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.forgex.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.

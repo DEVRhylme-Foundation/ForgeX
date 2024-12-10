@@ -1,6 +1,6 @@
 package main
 
-import "github.com/melkeydev/go-blueprint/cmd"
+import "github.com/DEVRhylme-Foundation/forgex/cmd"
 
 func main() {
 	cmd.Execute()

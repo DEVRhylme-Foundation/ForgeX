@@ -12,14 +12,14 @@ import (
 	"strings"
 	"text/template"
 
+	"github.com/DEVRhylme-Foundation/forgex/cmd/flags"
+	tpl "github.com/DEVRhylme-Foundation/forgex/cmd/template"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/template/advanced"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/template/dbdriver"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/template/docker"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/template/framework"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/utils"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/melkeydev/go-blueprint/cmd/flags"
-	tpl "github.com/melkeydev/go-blueprint/cmd/template"
-	"github.com/melkeydev/go-blueprint/cmd/template/advanced"
-	"github.com/melkeydev/go-blueprint/cmd/template/dbdriver"
-	"github.com/melkeydev/go-blueprint/cmd/template/docker"
-	"github.com/melkeydev/go-blueprint/cmd/template/framework"
-	"github.com/melkeydev/go-blueprint/cmd/utils"
 	"github.com/spf13/cobra"
 )
 
