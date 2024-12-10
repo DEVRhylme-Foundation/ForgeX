@@ -1,10 +1,10 @@
 {{- if .AdvancedOptions.docker }}
-BLUEPRINT_DB_HOST=psql_bp
+ForgeX_DB_HOST=psql_bp
 {{- else }}
-BLUEPRINT_DB_HOST=localhost
+ForgeX_DB_HOST=localhost
 {{- end }}
-BLUEPRINT_DB_PORT=5432
-BLUEPRINT_DB_DATABASE=blueprint
-BLUEPRINT_DB_USERNAME=melkey
-BLUEPRINT_DB_PASSWORD=password1234
-BLUEPRINT_DB_SCHEMA=public
+ForgeX_DB_PORT=5432
+ForgeX_DB_DATABASE=ForgeX
+ForgeX_DB_USERNAME=melkey
+ForgeX_DB_PASSWORD=password1234
+ForgeX_DB_SCHEMA=public

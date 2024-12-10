@@ -46,41 +46,41 @@ services:
     environment:
       APP_ENV: ${APP_ENV}
       PORT: ${PORT}
-      BLUEPRINT_DB_HOST: ${BLUEPRINT_DB_HOST}
-      BLUEPRINT_DB_PORT: ${BLUEPRINT_DB_PORT}
-      BLUEPRINT_DB_DATABASE: ${BLUEPRINT_DB_DATABASE}
-      BLUEPRINT_DB_USERNAME: ${BLUEPRINT_DB_USERNAME}
-      BLUEPRINT_DB_PASSWORD: ${BLUEPRINT_DB_PASSWORD}
+      ForgeX_DB_HOST: ${ForgeX_DB_HOST}
+      ForgeX_DB_PORT: ${ForgeX_DB_PORT}
+      ForgeX_DB_DATABASE: ${ForgeX_DB_DATABASE}
+      ForgeX_DB_USERNAME: ${ForgeX_DB_USERNAME}
+      ForgeX_DB_PASSWORD: ${ForgeX_DB_PASSWORD}
     depends_on:
       mysql_bp:
         condition: service_healthy
     networks:
-      - blueprint
+      - ForgeX
   mysql_bp:
     image: mysql:latest
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: ${BLUEPRINT_DB_DATABASE}
-      MYSQL_USER: ${BLUEPRINT_DB_USERNAME}
-      MYSQL_PASSWORD: ${BLUEPRINT_DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${BLUEPRINT_DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${ForgeX_DB_DATABASE}
+      MYSQL_USER: ${ForgeX_DB_USERNAME}
+      MYSQL_PASSWORD: ${ForgeX_DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${ForgeX_DB_ROOT_PASSWORD}
     ports:
-      - "${BLUEPRINT_DB_PORT}:3306"
+      - "${ForgeX_DB_PORT}:3306"
     volumes:
       - mysql_volume_bp:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "${BLUEPRINT_DB_HOST}", "-u", "${BLUEPRINT_DB_USERNAME}", "--password=${BLUEPRINT_DB_PASSWORD}"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "${ForgeX_DB_HOST}", "-u", "${ForgeX_DB_USERNAME}", "--password=${ForgeX_DB_PASSWORD}"]
       interval: 5s
       timeout: 5s
       retries: 3
       start_period: 15s
     networks:
-      - blueprint
+      - ForgeX
 
 volumes:
   mysql_volume_bp:
 networks:
-  blueprint:
+  ForgeX:
 ```
 
 ## Note

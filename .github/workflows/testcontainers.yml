@@ -1,4 +1,4 @@
-name: Integrations Test for the Generated Blueprints
+name: Integrations Test for the Generated ForgeXs
 
 on:
   pull_request: {}

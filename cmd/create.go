@@ -22,14 +22,14 @@ import (
 
 const logo = `
 
- ____  _                       _       _   
-|  _ \| |                     (_)     | |  
-| |_) | |_   _  ___ _ __  _ __ _ _ __ | |_ 
-|  _ <| | | | |/ _ \ '_ \| '__| | '_ \| __|
-| |_) | | |_| |  __/ |_) | |  | | | | | |_ 
-|____/|_|\__,_|\___| .__/|_|  |_|_| |_|\__|
-				   | |                     
-				   |_|                     
+ _____                      __  __
+|  ___|                     \ \/ /
+| |_ ___  _ __ __ _  ___     \  / 
+|  _/ _ \| '__/ _' |/ _ \    /  \ 
+| || (_) | | | (_| |  __/   / /\ \ 
+\_| \___/|_|  \__, |\___|  /_/  \_\
+			   __/ |            
+			  |___/             
 
 `
 
@@ -67,7 +67,7 @@ type Options struct {
 var createCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Create a Go project and don't worry about the structure",
-	Long:  "Go Blueprint is a CLI tool that allows you to focus on the actual Go code, and not the project structure. Perfect for someone new to the Go language",
+	Long:  "Go ForgeX is a CLI tool that allows you to focus on the actual Go code, and not the project structure. Perfect for someone new to the Go language",
 
 	Run: func(cmd *cobra.Command, args []string) {
 		var tprogram *tea.Program
@@ -293,7 +293,7 @@ var createCmd = &cobra.Command{
 
 		if isInteractive {
 			nonInteractiveCommand := utils.NonInteractiveCommand(cmd.Use, cmd.Flags())
-			fmt.Println(tipMsgStyle.Render("Tip: Repeat the equivalent Blueprint with the following non-interactive command:"))
+			fmt.Println(tipMsgStyle.Render("Tip: Repeat the equivalent ForgeX with the following non-interactive command:"))
 			fmt.Println(tipMsgStyle.Italic(false).Render(fmt.Sprintf("• %s\n", nonInteractiveCommand)))
 		}
 		err = spinner.ReleaseTerminal()

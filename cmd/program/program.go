@@ -1,5 +1,5 @@
 // Package program provides the
-// main functionality of Blueprint
+// main functionality of ForgeX
 package program
 
 import (

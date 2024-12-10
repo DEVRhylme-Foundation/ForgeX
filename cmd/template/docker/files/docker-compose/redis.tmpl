@@ -11,21 +11,21 @@ services:
     environment:
       APP_ENV: ${APP_ENV}
       PORT: ${PORT}
-      BLUEPRINT_DB_PORT: ${BLUEPRINT_DB_PORT}
-      BLUEPRINT_DB_ADDRESS: ${BLUEPRINT_DB_ADDRESS}
-      BLUEPRINT_DB_PASSWORD: ${BLUEPRINT_DB_PASSWORD}
-      BLUEPRINT_DB_DATABASE: ${BLUEPRINT_DB_DATABASE}
+      ForgeX_DB_PORT: ${ForgeX_DB_PORT}
+      ForgeX_DB_ADDRESS: ${ForgeX_DB_ADDRESS}
+      ForgeX_DB_PASSWORD: ${ForgeX_DB_PASSWORD}
+      ForgeX_DB_DATABASE: ${ForgeX_DB_DATABASE}
     depends_on:
       redis_bp:
         condition: service_healthy
     networks:
-      - blueprint
+      - ForgeX
 {{- end }}
   redis_bp:
     image: redis:7.2.4
     restart: unless-stopped
     ports:
-      - "${BLUEPRINT_DB_PORT}:6379"
+      - "${ForgeX_DB_PORT}:6379"
     {{- if .AdvancedOptions.docker }}
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
@@ -34,8 +34,8 @@ services:
       retries: 3
       start_period: 15s
     networks:
-      - blueprint
+      - ForgeX
 
 networks:
-  blueprint:
+  ForgeX:
 {{- end }}

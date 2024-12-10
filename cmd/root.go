@@ -1,5 +1,5 @@
 /*
-Copyright © 2023 Melkey DEVRhylme-Foundation@gmail.com
+Copyright © 2024  info@devrhylme.org
 */
 package cmd
 
@@ -13,7 +13,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "forgex",
 	Short: "A program to spin up a quick Go project using a popular framework",
-	Long: `Go Blueprint is a CLI tool that allows users to spin up a Go project with the corresponding structure seamlessly. 
+	Long: `Go ForgeX is a CLI tool that allows users to spin up a Go project with the corresponding structure seamlessly. 
 It also gives the option to integrate with one of the more popular Go frameworks!`,
 }
 
