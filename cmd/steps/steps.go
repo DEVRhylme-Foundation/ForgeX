@@ -2,7 +2,7 @@
 // each step of the CLI
 package steps
 
-import "github.com/melkeydev/go-blueprint/cmd/flags"
+import "github.com/DEVRhylme-Foundation/forgex/cmd/flags"
 
 // A StepSchema contains the data that is used
 // for an individual step of the CLI

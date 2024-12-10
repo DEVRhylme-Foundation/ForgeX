@@ -13,7 +13,7 @@ jobs:
       - name: Get version from file
         id: get_version_file
         run: |
-          VERSION_FILE=$(curl -s https://raw.githubusercontent.com/Melkeydev/go-blueprint/main/cmd/template/advanced/files/htmx/htmx.min.js.tmpl | grep version | awk -F'"' '{print "v" $2}')
+          VERSION_FILE=$(curl -s https://raw.githubusercontent.com/DEVRhylme-Foundation/forgex/main/cmd/template/advanced/files/htmx/htmx.min.js.tmpl | grep version | awk -F'"' '{print "v" $2}')
           echo "version file: $VERSION_FILE"
           if [[ "$VERSION_FILE" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "version_file=$VERSION_FILE" >> $GITHUB_OUTPUT

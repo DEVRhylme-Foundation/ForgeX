@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"regexp"
 
+	"github.com/DEVRhylme-Foundation/forgex/cmd/program"
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"github.com/melkeydev/go-blueprint/cmd/program"
 )
 
 var (

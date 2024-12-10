@@ -1,10 +1,10 @@
 ### Site metadata ###
 
-site_name: Go-Blueprint Docs
-site_description: Official documentation for Go-Blueprint project
-site_url: https://docs.go-blueprint.dev/
+site_name: forgex Docs
+site_description: Official documentation for forgex project
+site_url: https://docs.forgex.dev/
 
-repo_url: https://github.com/Melkeydev/go-blueprint
+repo_url: https://github.com/DEVRhylme-Foundation/forgex
 edit_uri: edit/main/docs/docs
 
 ### Build settings ###
@@ -64,10 +64,10 @@ extra:
         link: https://www.twitch.tv/melkey
         name: Twitch
       - icon: fontawesome/brands/youtube
-        link: https://www.youtube.com/@MelkeyDev
+        link: https://www.youtube.com/@DEVRhylme-Foundation
         name: YouTube
       - icon: fontawesome/brands/twitter
-        link: https://x.com/MelkeyDev
+        link: https://x.com/DEVRhylme-Foundation
         name: Twitter
     generator: false
 

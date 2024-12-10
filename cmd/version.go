@@ -21,7 +21,7 @@ var GoBlueprintVersion string
 // This won't give any version info when running 'go install' with the source code locally.
 // Finally we try to get the version from other embedded VCS info.
 func getGoBlueprintVersion() string {
-	noVersionAvailable := "No version info available for this build, run 'go-blueprint help version' for additional info"
+	noVersionAvailable := "No version info available for this build, run 'forgex help version' for additional info"
 	
 	if len(GoBlueprintVersion) != 0 {
 		return GoBlueprintVersion

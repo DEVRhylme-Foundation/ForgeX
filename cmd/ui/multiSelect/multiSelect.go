@@ -5,8 +5,8 @@ package multiSelect
 import (
 	"fmt"
 
-	"github.com/melkeydev/go-blueprint/cmd/program"
-	"github.com/melkeydev/go-blueprint/cmd/steps"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/program"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/steps"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
