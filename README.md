@@ -1,4 +1,4 @@
-![logo](./public/logo.png)
+![logo](https://github.com/user-attachments/assets/7af036ab-6027-4bf1-96f5-6de6250ea176)
 
 <div style="text-align: center;">
   <h1>
@@ -185,7 +185,7 @@ forgex create --name my-project --framework chi --driver mysql --advanced --feat
 ```
 
 <p align="center">
-  <img src="./public/ForgeX_advanced.png" alt="Advanced Options" width="800"/>
+  <img src="https://github.com/user-attachments/assets/3d230a79-103a-4e8d-a9b8-72e6ed205d47" alt="Advanced Options" width="800"/>
 </p>
 
  **Visit [documentation](https://docs.forgex.dev) to learn more about ForgeX and its features.**
