@@ -143,9 +143,6 @@ Here's an example of setting up a project with a specific database driver:
 forgex create --name my-project --framework gin --driver postgres --git commit
 ```
 
-<p align="center">
-  <img src="./public/ForgeX_1.png" alt="Starter Image" width="800"/>
-</p>
 
 Advanced features are accessible with the --advanced flag
 
