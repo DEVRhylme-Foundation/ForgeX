@@ -1,8 +1,8 @@
 {{ if .AdvancedOptions.docker }}
-BLUEPRINT_DB_HOST=mongo_bp
+ForgeX_DB_HOST=mongo_bp
 {{- else }}
-BLUEPRINT_DB_HOST=localhost
+ForgeX_DB_HOST=localhost
 {{- end }}
-BLUEPRINT_DB_PORT=27017
-BLUEPRINT_DB_USERNAME=melkey
-BLUEPRINT_DB_ROOT_PASSWORD=password1234
+ForgeX_DB_PORT=27017
+ForgeX_DB_USERNAME=melkey
+ForgeX_DB_ROOT_PASSWORD=password1234

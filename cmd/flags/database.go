@@ -8,7 +8,7 @@ import (
 type Database string
 
 // These are all the current databases supported. If you want to add one, you
-// can simply copy and paste a line here. Do not forget to also add it into the
+// can simply copy and past a line here. Do not forget to also add it into the
 // AllowedDBDrivers slice too!
 const (
 	MySql    Database = "mysql"
@@ -16,11 +16,10 @@ const (
 	Sqlite   Database = "sqlite"
 	Mongo    Database = "mongo"
 	Redis    Database = "redis"
-	Scylla   Database = "scylla"
 	None     Database = "none"
 )
 
-var AllowedDBDrivers = []string{string(MySql), string(Postgres), string(Sqlite), string(Mongo), string(Redis), string(Scylla), string(None)}
+var AllowedDBDrivers = []string{string(MySql), string(Postgres), string(Sqlite), string(Mongo), string(Redis), string(None)}
 
 func (f Database) String() string {
 	return string(f)

@@ -3,7 +3,7 @@ before:
     - go mod tidy
     - ./scripts/completions.sh
 builds:
-  - binary: go-blueprint
+  - binary: forgex
     main: ./
     goos:
       - darwin
@@ -15,7 +15,7 @@ builds:
     env:
       - CGO_ENABLED=0
     ldflags:
-      - -s -w -X github.com/melkeydev/go-blueprint/cmd.GoBlueprintVersion={{.Version}}
+      - -s -w -X github.com/DEVRhylme-Foundation/forgex/cmd.GoForgeXVersion={{.Version}}
 
 release:
   prerelease: auto

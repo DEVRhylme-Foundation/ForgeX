@@ -29,12 +29,12 @@ type service struct {
 }
 
 var (
-	database = os.Getenv("BLUEPRINT_DB_DATABASE")
-	password = os.Getenv("BLUEPRINT_DB_PASSWORD")
-	username = os.Getenv("BLUEPRINT_DB_USERNAME")
-	port     = os.Getenv("BLUEPRINT_DB_PORT")
-	host     = os.Getenv("BLUEPRINT_DB_HOST")
-        schema   = os.Getenv("BLUEPRINT_DB_SCHEMA")
+	database = os.Getenv("ForgeX_DB_DATABASE")
+	password = os.Getenv("ForgeX_DB_PASSWORD")
+	username = os.Getenv("ForgeX_DB_USERNAME")
+	port     = os.Getenv("ForgeX_DB_PORT")
+	host     = os.Getenv("ForgeX_DB_HOST")
+        schema   = os.Getenv("ForgeX_DB_SCHEMA")
 	dbInstance *service
 )
 
@@ -67,7 +67,7 @@ func (s *service) Health() map[string]string {
 	if err != nil {
 		stats["status"] = "down"
 		stats["error"] = fmt.Sprintf("db down: %v", err)
-		log.Fatalf("db down: %v", err)  // Log the error and terminate the program
+		log.Fatalf(fmt.Sprintf("db down: %v", err)) // Log the error and terminate the program
 		return stats
 	}
 

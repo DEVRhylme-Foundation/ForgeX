@@ -12,7 +12,7 @@ import (
 	"github.com/spf13/pflag"
 )
 
-const ProgramName = "go-blueprint"
+const ProgramName = "forgex"
 
 // NonInteractiveCommand creates the command string from a flagSet
 // to be used for getting the equivalent non-interactive shell command
@@ -91,19 +91,6 @@ func GoFmt(appDir string) error {
 	if err := ExecuteCmd("gofmt",
 		[]string{"-s", "-w", "."},
 		appDir); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-// GoModReplace runs "go mod edit -replace" in the selected
-// replace_payload e.g: github.com/gocql/gocql=github.com/scylladb/gocql@v1.14.4
-func GoModReplace(appDir string, replace string) error {
-	if err := ExecuteCmd("go",
-		[]string{"mod", "edit", "-replace", replace},
-		appDir,
-	); err != nil {
 		return err
 	}
 

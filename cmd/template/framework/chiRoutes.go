@@ -3,7 +3,7 @@ package framework
 import (
 	_ "embed"
 
-	"github.com/melkeydev/go-blueprint/cmd/template/advanced"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/template/advanced"
 )
 
 //go:embed files/routes/chi.go.tmpl

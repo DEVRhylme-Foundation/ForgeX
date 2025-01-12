@@ -7,29 +7,29 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/DEVRhylme-Foundation/forgex/cmd/flags"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/program"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/steps"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/ui/multiInput"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/ui/multiSelect"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/ui/spinner"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/ui/textinput"
+	"github.com/DEVRhylme-Foundation/forgex/cmd/utils"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"github.com/melkeydev/go-blueprint/cmd/flags"
-	"github.com/melkeydev/go-blueprint/cmd/program"
-	"github.com/melkeydev/go-blueprint/cmd/steps"
-	"github.com/melkeydev/go-blueprint/cmd/ui/multiInput"
-	"github.com/melkeydev/go-blueprint/cmd/ui/multiSelect"
-	"github.com/melkeydev/go-blueprint/cmd/ui/spinner"
-	"github.com/melkeydev/go-blueprint/cmd/ui/textinput"
-	"github.com/melkeydev/go-blueprint/cmd/utils"
 	"github.com/spf13/cobra"
 )
 
 const logo = `
 
- ____  _                       _       _   
-|  _ \| |                     (_)     | |  
-| |_) | |_   _  ___ _ __  _ __ _ _ __ | |_ 
-|  _ <| | | | |/ _ \ '_ \| '__| | '_ \| __|
-| |_) | | |_| |  __/ |_) | |  | | | | | |_ 
-|____/|_|\__,_|\___| .__/|_|  |_|_| |_|\__|
-				   | |                     
-				   |_|                     
+ _____                      __  __
+|  ___|                     \ \/ /
+| |_ ___  _ __ __ _  ___     \  / 
+|  _/ _ \| '__/ _' |/ _ \    /  \ 
+| || (_) | | | (_| |  __/   / /\ \ 
+\_| \___/|_|  \__, |\___|  /_/  \_\
+			   __/ |            
+			  |___/             
 
 `
 
@@ -67,7 +67,7 @@ type Options struct {
 var createCmd = &cobra.Command{
 	Use:   "create",
 	Short: "Create a Go project and don't worry about the structure",
-	Long:  "Go Blueprint is a CLI tool that allows you to focus on the actual Go code, and not the project structure. Perfect for someone new to the Go language",
+	Long:  "Go ForgeX is a CLI tool that allows you to focus on the actual Go code, and not the project structure. Perfect for someone new to the Go language",
 
 	Run: func(cmd *cobra.Command, args []string) {
 		var tprogram *tea.Program
@@ -280,14 +280,6 @@ var createCmd = &cobra.Command{
 		fmt.Println(endingMsgStyle.Render("\nNext steps:"))
 		fmt.Println(endingMsgStyle.Render(fmt.Sprintf("• cd into the newly created project with: `cd %s`\n", utils.GetRootDir(project.ProjectName))))
 
-		if options.Advanced.Choices["React"] {
-			options.Advanced.Choices["Htmx"] = false
-			options.Advanced.Choices["Tailwind"] = false
-			fmt.Println(endingMsgStyle.Render("• cd into frontend\n"))
-			fmt.Println(endingMsgStyle.Render("• npm install\n"))
-			fmt.Println(endingMsgStyle.Render("• npm run dev\n"))
-		}
-
 		if options.Advanced.Choices["Tailwind"] {
 			options.Advanced.Choices["Htmx"] = true
 			fmt.Println(endingMsgStyle.Render("• Install the tailwind standalone cli if you haven't already, grab the executable for your platform from the latest release on GitHub\n"))
@@ -295,14 +287,13 @@ var createCmd = &cobra.Command{
 		}
 
 		if options.Advanced.Choices["Htmx"] {
-			options.Advanced.Choices["react"] = false
 			fmt.Println(endingMsgStyle.Render("• Install the templ cli if you haven't already by running `go install github.com/a-h/templ/cmd/templ@latest`\n"))
 			fmt.Println(endingMsgStyle.Render("• Generate templ function files by running `templ generate`\n"))
 		}
 
 		if isInteractive {
 			nonInteractiveCommand := utils.NonInteractiveCommand(cmd.Use, cmd.Flags())
-			fmt.Println(tipMsgStyle.Render("Tip: Repeat the equivalent Blueprint with the following non-interactive command:"))
+			fmt.Println(tipMsgStyle.Render("Tip: Repeat the equivalent ForgeX with the following non-interactive command:"))
 			fmt.Println(tipMsgStyle.Italic(false).Render(fmt.Sprintf("• %s\n", nonInteractiveCommand)))
 		}
 		err = spinner.ReleaseTerminal()

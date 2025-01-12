@@ -9,10 +9,9 @@ The project tree would look like this:
 │   ├── api/
 │   │   └── main.go
 │   └── web/
-│       ├── styles/
-│       │   └── input.css
 │       ├── assets/
 │       │   ├── css/
+│       │   │   ├── input.css
 │       │   │   └── output.css
 │       │   └── js/
 │       │       └── htmx.min.js
@@ -25,7 +24,7 @@ The project tree would look like this:
 ├── internal/
 │   └── server/
 │       ├── routes.go
-│       ├── routes_test.go
+│       ├── routes_test.go 
 │       └── server.go
 ├── go.mod
 ├── go.sum
@@ -58,14 +57,14 @@ templ-install:
 		fi; \
 	fi
 
-tailwind-install:
+tailwind:
 	@if [ ! -f tailwindcss ]; then curl -sL https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64 -o tailwindcss; fi
 	@chmod +x tailwindcss
 
-build: tailwind-install templ-install
+build: tailwind templ-install
 	@echo "Building..."
 	@templ generate
-	@./tailwindcss -i cmd/web/styles/input.css -o cmd/web/assets/css/output.css
+	@./tailwindcss -i cmd/web/assets/css/input.css -o cmd/web/assets/css/output.css
 	@go build -o main cmd/api/main.go
 ```
 

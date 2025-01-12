@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest a new idea for go-blueprint.
+description: Suggest a new idea for forgex.
 title: "[Feature Request] "
 labels: ["enhancement"]
 body:
@@ -15,7 +15,7 @@ body:
     attributes:
       label: Tell us about your feature request
       description: |
-        Describe what you would like go-blueprint to be able to do.
+        Describe what you would like forgex to be able to do.
     validations:
       required: true
   - type: checkboxes

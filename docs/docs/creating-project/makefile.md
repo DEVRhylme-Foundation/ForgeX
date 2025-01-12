@@ -15,7 +15,7 @@ This target installs the Go-based templating tool, `templ`, if it is not already
 - **Unix-based systems**: Prompts the user to install `templ` if it is missing.
 - **Windows**: Uses PowerShell to check for and install `templ`.
 
-***`tailwind-install`***
+***`tailwind`***
 
 This target downloads and sets up `tailwindcss`, depending on the user's operating system:
 
@@ -32,7 +32,7 @@ Builds the Go application and generates assets with `templ` and `tailwind`, if t
 
 ***`run`***
 
-Runs the Go application by executing the `cmd/api/main.go` file and npm install with run dev if React flag is used.
+Runs the Go application by executing the `cmd/api/main.go` file.
 
 ***`docker-run`*** and ***`docker-down`***
 

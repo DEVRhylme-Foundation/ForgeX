@@ -1,10 +1,10 @@
 ### Site metadata ###
 
-site_name: Go-Blueprint Docs
-site_description: Official documentation for Go-Blueprint project
-site_url: https://docs.go-blueprint.dev/
+site_name: forgex Docs
+site_description: Official documentation for forgex project
+site_url: https://docs.forgex.dev/
 
-repo_url: https://github.com/Melkeydev/go-blueprint
+repo_url: https://github.com/DEVRhylme-Foundation/forgex
 edit_uri: edit/main/docs/docs
 
 ### Build settings ###
@@ -31,14 +31,14 @@ theme:
 nav:
   - Home: index.md
   - Installation: installation.md
-  - Blueprint UI: blueprint-ui.md
+  - ForgeX UI: ForgeX-ui.md
   - Project creation & default config:
     - Project init: creating-project/project-init.md
     - Makefile: creating-project/makefile.md
     - Air: creating-project/air.md
-  - Blueprint Core:
-    - Frameworks: blueprint-core/frameworks.md
-    - DB Drivers: blueprint-core/db-drivers.md
+  - ForgeX Core:
+    - Frameworks: ForgeX-core/frameworks.md
+    - DB Drivers: ForgeX-core/db-drivers.md
   - Advanced Flag:
     - AF Usage: advanced-flag/advanced-flag.md
     - HTMX and Templ: advanced-flag/htmx-templ.md
@@ -46,14 +46,12 @@ nav:
     - GoReleaser & GoTest CI: advanced-flag/goreleaser.md
     - Websocket: advanced-flag/websocket.md
     - Docker: advanced-flag/docker.md
-    - React & Vite (TypeScript): advanced-flag/react-vite.md
   - Testing endpoints: 
     - Server: endpoints-test/server.md
     - DB Health Endpoints: 
        - SQL DBs: endpoints-test/sql.md
        - Redis: endpoints-test/redis.md
        - MongoDB: endpoints-test/mongo.md
-       - ScyllaDB: endpoints-test/scylladb.md
     - Websocket: endpoints-test/websocket.md
     - Web Endpoint: endpoints-test/web.md
 
@@ -66,10 +64,10 @@ extra:
         link: https://www.twitch.tv/melkey
         name: Twitch
       - icon: fontawesome/brands/youtube
-        link: https://www.youtube.com/@MelkeyDev
+        link: https://www.youtube.com/@DEVRhylme-Foundation
         name: YouTube
       - icon: fontawesome/brands/twitter
-        link: https://x.com/MelkeyDev
+        link: https://x.com/DEVRhylme-Foundation
         name: Twitter
     generator: false
 

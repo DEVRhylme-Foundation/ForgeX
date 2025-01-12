@@ -21,9 +21,9 @@ type service struct {
 }
 
 var (
-	host     = os.Getenv("BLUEPRINT_DB_HOST")
-	port     = os.Getenv("BLUEPRINT_DB_PORT")
-	//database = os.Getenv("BLUEPRINT_DB_DATABASE")
+	host     = os.Getenv("ForgeX_DB_HOST")
+	port     = os.Getenv("ForgeX_DB_PORT")
+	//database = os.Getenv("ForgeX_DB_DATABASE")
 )
 
 func New() Service {
@@ -44,7 +44,7 @@ func (s *service) Health() map[string]string {
 
 	err := s.db.Ping(ctx, nil)
 	if err != nil {
-		log.Fatalf("db down: %v", err) 
+		log.Fatalf(fmt.Sprintf("db down: %v", err))
 	}
 
 	return map[string]string{

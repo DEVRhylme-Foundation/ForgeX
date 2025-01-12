@@ -11,38 +11,24 @@ services:
     environment:
       APP_ENV: ${APP_ENV}
       PORT: ${PORT}
-      BLUEPRINT_DB_HOST: ${BLUEPRINT_DB_HOST}
-      BLUEPRINT_DB_PORT:  ${BLUEPRINT_DB_PORT}
-      BLUEPRINT_DB_USERNAME: ${BLUEPRINT_DB_USERNAME}
-      BLUEPRINT_DB_ROOT_PASSWORD: ${BLUEPRINT_DB_ROOT_PASSWORD}
+      ForgeX_DB_HOST: ${ForgeX_DB_HOST}
+      ForgeX_DB_PORT:  ${ForgeX_DB_PORT}
+      ForgeX_DB_USERNAME: ${ForgeX_DB_USERNAME}
+      ForgeX_DB_ROOT_PASSWORD: ${ForgeX_DB_ROOT_PASSWORD}
     depends_on:
       mongo_bp:
         condition: service_healthy
     networks:
-      - blueprint
-{{- end }}
-{{- if and .AdvancedOptions.react .AdvancedOptions.docker }}
-  frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: frontend
-    restart: unless-stopped
-    depends_on:
-      - app
-    ports:
-      - 5173:5173
-    networks:
-      - blueprint
+      - ForgeX
 {{- end }}
   mongo_bp:
     image: mongo:latest
     restart: unless-stopped
     environment:
-      MONGO_INITDB_ROOT_USERNAME: ${BLUEPRINT_DB_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${BLUEPRINT_DB_ROOT_PASSWORD}
+      MONGO_INITDB_ROOT_USERNAME: ${ForgeX_DB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${ForgeX_DB_ROOT_PASSWORD}
     ports:
-      - "${BLUEPRINT_DB_PORT}:27017"
+      - "${ForgeX_DB_PORT}:27017"
     volumes:
       - mongo_volume_bp:/data/db
     {{- if .AdvancedOptions.docker }}
@@ -53,12 +39,12 @@ services:
       retries: 3
       start_period: 15s
     networks:
-      - blueprint
+      - ForgeX
     {{- end }}
 
 volumes:
   mongo_volume_bp:
 {{- if .AdvancedOptions.docker }}
 networks:
-  blueprint:
+  ForgeX:
 {{- end }}

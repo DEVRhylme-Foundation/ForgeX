@@ -1,6 +1,6 @@
 ## Testing Endpoints with CURL and WebSocat
 
-Testing endpoints is an essential part of ensuring the correctness and functionality of your app. Depending on what options are used for go-blueprint project creation, you have various endpoints for testing your init application status.
+Testing endpoints is an essential part of ensuring the correctness and functionality of your app. Depending on what options are used for forgex project creation, you have various endpoints for testing your init application status.
 
 
 Before proceeding, ensure you have the following tools installed:

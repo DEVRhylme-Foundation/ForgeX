@@ -2,7 +2,7 @@
 // each step of the CLI
 package steps
 
-import "github.com/melkeydev/go-blueprint/cmd/flags"
+import "github.com/DEVRhylme-Foundation/forgex/cmd/flags"
 
 // A StepSchema contains the data that is used
 // for an individual step of the CLI
@@ -83,9 +83,6 @@ func InitSteps(projectType flags.Framework, databaseType flags.Database) *Steps 
 						Title: "Redis",
 						Desc:  "Redis driver for Go."},
 					{
-						Title: "Scylla",
-						Desc:  "ScyllaDB Enhanced driver from GoCQL."},
-					{
 						Title: "None",
 						Desc:  "Choose this option if you don't wish to install a specific database driver."},
 				},
@@ -97,14 +94,9 @@ func InitSteps(projectType flags.Framework, databaseType flags.Database) *Steps 
 				Headers:  "Which advanced features do you want?",
 				Options: []Item{
 					{
-						Flag:  "React",
-						Title: "React",
-						Desc:  "Use Vite to spin up a React project in TypeScript. This disables selecting HTMX/Templ",
-					},
-					{
 						Flag:  "Htmx",
 						Title: "HTMX/Templ",
-						Desc:  "Add starter HTMX and Templ files. This disables selecting React",
+						Desc:  "Add starter HTMX and Templ files.",
 					},
 					{
 						Flag:  "GitHubAction",
@@ -119,7 +111,7 @@ func InitSteps(projectType flags.Framework, databaseType flags.Database) *Steps 
 					{
 						Flag:  "Tailwind",
 						Title: "TailwindCSS",
-						Desc:  "A utility-first CSS framework (selecting this will automatically add HTMX unless React is specified)",
+						Desc:  "A utility-first CSS framework (selecting this will automatically add HTMX)",
 					},
 					{
 						Flag:  "Docker",
