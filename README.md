@@ -1,4 +1,5 @@
 ![logo](./public/logo.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDEVRhylme-Foundation%2FForgeX.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FDEVRhylme-Foundation%2FForgeX?ref=badge_shield)
 
 <div style="text-align: center;">
   <h1>
@@ -213,3 +214,6 @@ forgex create --name my-project --framework chi --driver mysql --advanced --feat
 </h2>
 
 Licensed under [MIT License](./LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDEVRhylme-Foundation%2FForgeX.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FDEVRhylme-Foundation%2FForgeX?ref=badge_large)
