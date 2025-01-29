@@ -223,20 +223,25 @@ var createCmd = &cobra.Command{
 		}
 
 		if project.GitOptions == "" {
-			isInteractive = true
-			step := steps.Steps["git"]
-			tprogram = tea.NewProgram(multiInput.InitialModelMulti(step.Options, options.Git, step.Headers, project))
-			if _, err := tprogram.Run(); err != nil {
-				cobra.CheckErr(textinput.CreateErrorInputModel(err).Err())
-			}
-			project.ExitCLI(tprogram)
+    			isInteractive = true
+    			step := steps.Steps["git"]
+    			tprogram := tea.NewProgram(multiInput.InitialModelMulti(step.Options, options.Git, step.Headers, project))
 
-			project.GitOptions = flags.Git(strings.ToLower(options.Git.Choice))
-			err := cmd.Flag("git").Value.Set(project.GitOptions.String())
-			if err != nil {
-				log.Fatal("failed to set the git flag value", err)
-			}
+    		if _, err := tprogram.Run(); err != nil {
+        		cobra.CheckErr(textinput.CreateErrorInputModel(err).Err())
+    		}
+
+    		project.ExitCLI(tprogram)
+
+    		// Set the Git option and handle potential errors
+    		project.GitOptions = flags.Git(strings.ToLower(options.Git.Choice))
+    		if err := cmd.Flag("git").Value.Set(project.GitOptions.String()); err != nil {
+        		log.Fatal("failed to set the git flag value", err)
+    			}
 		}
+
+
+		
 
 		currentWorkingDir, err := os.Getwd()
 		if err != nil {
