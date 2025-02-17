@@ -1,5 +1,5 @@
 /*
-Go ForgeX version
+Go ForgeX version command
 */
 package cmd
 
@@ -11,34 +11,33 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// GoForgeXVersion is the version of the cli to be overwritten by goreleaser in the CI run with the version of the release in github
+// GoForgeXVersion is set by GoReleaser in CI with the release version.
 var GoForgeXVersion string
 
-// Go ForgeX needs to be built in a specific way to provide useful version information.
-// First we try to get the version from ldflags embedded into GoForgeXVersion.
-// Then we try to get the version from from the go.mod build info.
-// If Go ForgeX is installed with a specific version tag or using @latest then that version will be included in bi.Main.Version.
-// This won't give any version info when running 'go install' with the source code locally.
-// Finally we try to get the version from other embedded VCS info.
+// getGoForgeXVersion retrieves the version information.
 func getGoForgeXVersion() string {
-	noVersionAvailable := "No version info available for this build, run 'forgex help version' for additional info"
+	const noVersionMsg = "No version info available for this build, run 'forgex help version' for additional info"
 
-	if len(GoForgeXVersion) != 0 {
+	// Check if GoForgeXVersion is set (injected at build time).
+	if GoForgeXVersion != "" {
 		return GoForgeXVersion
 	}
 
+	// Read Go build info.
 	bi, ok := debug.ReadBuildInfo()
 	if !ok {
-		return noVersionAvailable
+		return noVersionMsg
 	}
 
-	// If no main version is available, Go defaults it to (devel)
+	// Return version from build info if available.
 	if bi.Main.Version != "(devel)" {
 		return bi.Main.Version
 	}
 
+	// Extract VCS revision and timestamp from build info.
 	var vcsRevision string
 	var vcsTime time.Time
+
 	for _, setting := range bi.Settings {
 		switch setting.Key {
 		case "vcs.revision":
@@ -48,27 +47,25 @@ func getGoForgeXVersion() string {
 		}
 	}
 
+	// Return VCS revision and timestamp if available.
 	if vcsRevision != "" {
-		return fmt.Sprintf("%s, (%s)", vcsRevision, vcsTime)
+		return fmt.Sprintf("%s (%s)", vcsRevision, vcsTime)
 	}
 
-	return noVersionAvailable
+	return noVersionMsg
 }
 
-// versionCmd represents the version command
+// versionCmd defines the "version" command.
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Display application version information.",
-	Long: `
-The version command provides information about the application's version.
+	Short: "Display application version information",
+	Long: `Displays the current version of Go ForgeX.
 
-Go ForgeX requires version information to be embedded at compile time.
-For detailed version information, Go ForgeX needs to be built as specified in the README installation instructions.
-If Go ForgeX is built within a version control repository and other version info isn't available,
-the revision hash will be used instead.
+The version information is embedded at compile time. 
+If unavailable, Go ForgeX attempts to retrieve it from the build environment.
+If built within a version control repository, the revision hash will be used.
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		version := getGoForgeXVersion()
-		fmt.Printf("Go ForgeX CLI version: %v\n", version)
+		fmt.Printf("Go ForgeX CLI version: %v\n", getGoForgeXVersion())
 	},
 }
